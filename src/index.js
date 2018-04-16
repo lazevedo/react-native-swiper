@@ -466,16 +466,16 @@ export default class extends Component {
       // Setting the offset to the same thing will not do anything,
       // so we increment it by 1 then immediately set it to what it should be,
       // after render.
-      if (offset[dir] === this.internals.offset[dir]) {
-        newState.offset = { x: 0, y: 0 }
-        newState.offset[dir] = offset[dir] + 1
-        this.setState(newState, () => {
-          this.setState({ offset: offset }, cb)
-        })
-      } else {
+      // if (offset[dir] === this.internals.offset[dir]) {
+      //   newState.offset = { x: 0, y: 0 }
+      //   newState.offset[dir] = offset[dir] + 1
+      //   this.setState(newState, () => {
+      //     this.setState({ offset: offset }, cb)
+      //   })
+      // } else {
         newState.offset = offset
         this.setState(newState, cb)
-      }
+      // }
     } else {
       this.setState(newState, cb)
     }
